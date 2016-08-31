@@ -16,9 +16,9 @@ namespace UserManagerTest
         {
             User user = new User();
             user.FirstName = "Shreekesh";
-            user.Id = 1;
-            UserServices service = new UserServices();
-            Int64 result = service.update_user_firstName(user.Id,user.FirstName);
+            user.Id = 10005;
+            UserServices service = ServiceFactory.getService();
+            var result = service.update_user_firstName(user.Id,user.FirstName);
             Assert.IsTrue(result != 0);
         }
     }

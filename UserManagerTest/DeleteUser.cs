@@ -13,7 +13,7 @@ namespace UserManagerTest
         {
             User user = new User();
             user.Id = 1;
-            UserServices service = new UserServices();
+            UserServices service = ServiceFactory.getService();
             service.delete_user(user.Id);
             
         }
