@@ -7,7 +7,7 @@ using UserManagement.Entities;
 
 namespace UserManagement
 {
-    public class UserServices
+    public class UserServices: IUserServices
     {
         public void delete_user(long id)
         {
@@ -28,11 +28,14 @@ namespace UserManagement
         public Int64 update_user_firstName(long id, string firstName)
         {
             DataClasses1DataContext datacontext = new DataClasses1DataContext();
-
+          
             datacontext.spUpdateUser(id, firstName);
 
+            return id;
 
-            return datacontext.spSelectUserID(firstName).SingleOrDefault().Id;
+
+
+
 
         }
     }
